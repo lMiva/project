@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WFA
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double s = 0, v = 0, t = 0;
+            string d;
+            d = ("err");
+            s = Convert.ToInt32(textBox1.Text);
+            v = Convert.ToInt32(textBox2.Text);
+
+
+            string writePath = @"C:\Users\Valera\Desktop\Новая папка\text.txt";
+            
+            if (textBox1.Text.Length > 0)
+            {
+                try
+                {
+                    s = Double.Parse(textBox1.Text);
+                    
+                }
+                catch (Exception ex) { }
+            }
+
+            else
+            {
+                try
+                {
+                    v = Double.Parse(textBox2.Text);
+                   
+                }
+                catch (Exception ex) { }
+            }
+
+            if (v < 1)
+            {
+             
+                textBox3.Text = d.ToString();
+                
+            }
+            else
+            {
+
+                t = s / v;
+                textBox3.Text = t.ToString();
+
+            }
+        }
+    }
+
+
+}
